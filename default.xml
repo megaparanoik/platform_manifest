@@ -4,6 +4,11 @@
   <remote  name="aosp"
            fetch="https://android.googlesource.com/platform/"
            review="https://android-review.googlesource.com/" />
+
+  <remote  name="private"
+           fetch=".."
+           review="https://android-review.googlesource.com/" />
+
   <default revision="refs/tags/android-9.0.0_r35"
            remote="aosp"
            sync-j="4" />
@@ -707,6 +712,8 @@
   <project path="tools/test/connectivity" name="platform/tools/test/connectivity" groups="pdk" />
   <project path="tools/tradefederation/core" name="platform/tools/tradefederation" groups="pdk,tradefed" />
   <project path="tools/tradefederation/contrib" name="platform/tools/tradefederation/contrib" groups="pdk,tradefed" />
+
+  <project path="kernel/hikey-linaro-kernel" name="hikey-linaro-kernel" groups="device" clone-depth="1" remote="private" revision="gl-hikey960-4.9"/>
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 
